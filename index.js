@@ -6,6 +6,7 @@ const compress = require("compress");
 const todoRouter=require("./routes/todos")
 const userRouter=require("./routes/usersRoute")
 const loginRouter=require("./routes/login")
+const cors = require("cors")
 const {authenticate} = require("./middelwares/authentication")
 
 // connect to database
@@ -14,8 +15,10 @@ mongoose.connect(config.get("todos_connectionString"))
 .catch(err=>console.log(err))
 
 const app = express()
+
 console.log(config.get("mail.server"));
 app.use(express.json())
+app.use(cors())
 app.use(helmet())
 // app.use(compress())
 // app.use(authenticate)
