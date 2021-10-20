@@ -1,0 +1,6 @@
+{
+  "mail": {
+    "server": "production server",
+    "password": "production password"
+  }
+}
