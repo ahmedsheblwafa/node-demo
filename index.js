@@ -25,6 +25,9 @@ app.use("/api/users",userRouter)
 app.use("/api/login",loginRouter)
 
 app.get("/",(req,res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.status(200).send("<h1>first page</h1>")
 })
 
