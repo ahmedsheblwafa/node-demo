@@ -1,6 +1,8 @@
 const express = require("express")
 const mongoose =require ("mongoose")
 const config = require("config");
+const helmet = require("helmet");
+const compress = require("compress");
 const todoRouter=require("./routes/todos")
 const userRouter=require("./routes/usersRoute")
 const loginRouter=require("./routes/login")
@@ -14,6 +16,8 @@ mongoose.connect(config.get("todos_connectionString"))
 const app = express()
 console.log(config.get("mail.server"));
 app.use(express.json())
+app.use(helmet())
+app.use(compress())
 // app.use(authenticate)
 
 app.use("/api/todos",todoRouter)
