@@ -25,7 +25,7 @@ app.use("/api/users",userRouter)
 app.use("/api/login",loginRouter)
 
 app.get("/",(req,res)=>{
-    res.send("<h1>first page</h1>")
+    res.status(200).send("<h1>first page</h1>")
 })
 
 
