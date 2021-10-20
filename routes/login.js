@@ -13,7 +13,7 @@ router.post("/",async(req,res)=>{
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "X-Requested-With");
         res.header('Access-Control-Allow-Headers', 'Content-Type');
-        res.send(token)
+        res.send({token})
     
 })
 
