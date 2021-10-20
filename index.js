@@ -24,6 +24,9 @@ app.use("/api/todos",todoRouter)
 app.use("/api/users",userRouter)
 app.use("/api/login",loginRouter)
 
+app.get("/",(req,res)=>{
+    res.send("<h1>first page</h1>")
+})
 
 
 
