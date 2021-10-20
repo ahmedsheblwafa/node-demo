@@ -17,7 +17,7 @@ const app = express()
 console.log(config.get("mail.server"));
 app.use(express.json())
 app.use(helmet())
-app.use(compress())
+// app.use(compress())
 // app.use(authenticate)
 
 app.use("/api/todos",todoRouter)
