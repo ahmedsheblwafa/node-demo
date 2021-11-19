@@ -10,7 +10,7 @@ router.get("/",async(req,res)=>{
     const allTodos =await ToDo.find()
     res.send(allTodos)
 })
-router.use(authenticate)
+// router.use(authenticate)
 router.get("/:id",async(req,res)=>{
     const {id} = req.params
     const todo = await ToDo.findOne({_id:id})
